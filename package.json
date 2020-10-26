@@ -1,14 +1,14 @@
 {
-  "name": "@kissmybutton/motorcortex-anime",
-  "version": "1.4.10",
-  "description": "Annime plugin for MotorCortex",
-  "main": "dist/motorcortex-anime.cjs.js",
-  "module": "dist/motorcortex-anime.esm.js",
-  "browser": "dist/motorcortex-anime.umd.js",
+  "name": "@kissmybutton/motorcortex-subtitles",
+  "version": "1.0.0",
+  "description": "Subtitles plugin for MotorCortex",
+  "main": "dist/motorcortex-subtitles.cjs.js",
+  "module": "dist/motorcortex-subtitles.esm.js",
+  "browser": "dist/motorcortex-subtitles.umd.js",
   "author": "KissMyButton PC (kissmybutton.gr) <opensource@kissmybutton.gr>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kissmybutton/motorcortex-anime.git"
+    "url": "https://github.com/kissmybutton/motorcortex-subtitles.git"
   },
   "license": "MIT",
   "engines": {
@@ -67,11 +67,8 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "mc-animejs-core": "3.1.0"
-  },
   "peerDependencies": {
-    "@kissmybutton/motorcortex": "3.6.11"
+    "@kissmybutton/motorcortex": "4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -79,7 +76,7 @@
     "@babel/preset-env": "^7.9.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@kissmybutton/motorcortex": "^3.7.1",
+    "@kissmybutton/motorcortex": "^3.9.6",
     "@kissmybutton/motorcortex-player": "^1.5.11",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -140,5 +137,8 @@
       "pre-commit": "lint-staged",
       "pre-push": "npm run test:prod"
     }
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
   }
 }

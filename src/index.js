@@ -1,15 +1,11 @@
-import Anime from "./Anime";
-import compositeAttributes from "./compoAttributes";
-import { animatedAttrs } from "./validation";
+import SRT from "./SRT";
 
 export default {
-  npm_name: "@kissmybutton/motorcortex-anime",
+  npm_name: "@kissmybutton/motorcortex-subtitles",
   incidents: [
     {
-      exportable: Anime,
-      name: "Anime",
-      attributesValidationRules: { animatedAttrs },
+      exportable: SRT,
+      name: "SRT",
     },
   ],
-  compositeAttributes,
 };
