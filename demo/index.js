@@ -1,4 +1,3 @@
-console.log("true");
 import Player from "@kissmybutton/motorcortex-player";
 import { Clip, loadPlugin } from "@kissmybutton/motorcortex/";
 import SubtitlesDefinition from "../src/";
@@ -12,16 +11,13 @@ const css = `
   }
   #subs-container{
     position:absolute;
-    bottom:0;
+    bottom:80px;
     left:50%;
     transform:translateX(-50%);
-    background:red;
-    minWidth:50px;
-    minHeight:50px;
   }
-
 `;
-const html = `<div class="container">
+const html = `
+<div class="container">
   <div id="subs-container"></div>
 </div>`;
 const host = document.getElementById("clip");
@@ -39,6 +35,9 @@ const clip = new Clip({
 });
 const subtitle = new Subtitles.SRT(
   {
+    attrs: {
+      css: `color:white;font-size:20px`,
+    },
     animatedAttrs: {
       text: `
       	1
@@ -53,7 +52,7 @@ const subtitle = new Subtitles.SRT(
   },
   { duration: 10000, selector: "#subs-container" }
 );
-const tes = clip.addIncident(subtitle, 0);
+clip.addIncident(subtitle, 0);
 new Player({
   scaleToFit: true,
   clip: clip,
