@@ -11,7 +11,7 @@
   };
   var n,
     r = !0,
-    i = "63e4d241aab50a517870",
+    i = "2270f121cadf19699407",
     a = {},
     o = [],
     s = [];
@@ -52265,6 +52265,7 @@
                           this.element.innerHTML = o;
                           break;
                         }
+                        this.element.innerHTML = "";
                       }
                     },
                   },
@@ -52281,7 +52282,7 @@
       m = document.getElementById("clip"),
       g = new a.Clip({
         css:
-          "\n  .container{\n  \twidth:100%;\n  \theight:100%;\n  \tposition:relative;\n  }\n  #subs-container{\n    position:absolute;\n    bottom:80px;\n    left:50%;\n    transform:translateX(-50%);\n  }\n",
+          "\n  .container{\n  \twidth:100%;\n  \theight:100%;\n  \tposition:relative;\n  }\n  #subs-container{\n    text-align:center;\n    position:absolute;\n    bottom:80px;\n    left:50%;\n    transform:translateX(-50%);\n  }\n",
         html:
           '\n<div class="container">\n  <div id="subs-container"></div>\n</div>',
         host: m,
@@ -52292,10 +52293,10 @@
           attrs: { css: "color:white;font-size:20px" },
           animatedAttrs: {
             text:
-              "\n      \t1\n      \t00:00:00,000 --\x3e 00:00:05,000\n      \tThese are some captions\n\n      \t2\n      \t00:00:05,000 --\x3e 00:00:10,000\n      \tThese are some other captions\n      \t",
+              "\n      \t1\n      \t00:00:00,000 --\x3e 00:00:05,000\n      \tThese are some captions\n\n      \t2\n      \t00:00:05,000 --\x3e 00:00:10,000\n      \tThese are some other captions\n\n        2\n        00:00:12,000 --\x3e 00:00:15,000\n        These are some other captions goes here sadfsad dsaf sadf sadf sadf \n      \t",
           },
         },
-        { duration: 1e4, selector: "#subs-container" }
+        { duration: 15e3, selector: "#subs-container" }
       );
     g.addIncident(y, 0),
       new i.a({

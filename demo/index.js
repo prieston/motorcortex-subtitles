@@ -10,6 +10,7 @@ const css = `
   	position:relative;
   }
   #subs-container{
+    text-align:center;
     position:absolute;
     bottom:80px;
     left:50%;
@@ -47,10 +48,14 @@ const subtitle = new Subtitles.SRT(
       	2
       	00:00:05,000 --> 00:00:10,000
       	These are some other captions
+
+        2
+        00:00:12,000 --> 00:00:15,000
+        These are some other captions goes here sadfsad dsaf sadf sadf sadf 
       	`,
     },
   },
-  { duration: 10000, selector: "#subs-container" }
+  { duration: 15000, selector: "#subs-container" }
 );
 clip.addIncident(subtitle, 0);
 new Player({

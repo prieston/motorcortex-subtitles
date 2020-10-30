@@ -46,6 +46,8 @@ export default class SRT extends MC.API.MonoIncident {
       if (currentTime >= startTime && currentTime < endTime) {
         this.element.innerHTML = text;
         break;
+      } else {
+        this.element.innerHTML = "";
       }
     }
   }
