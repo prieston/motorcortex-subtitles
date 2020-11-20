@@ -1,6 +1,6 @@
 import MC from "@kissmybutton/motorcortex";
 
-export default class SRT extends MC.API.MonoIncident {
+export default class SRT extends MC.Effect {
   onGetContext() {
     this.element.style = this.attrs.attrs.css;
     this.subs = this.attrs.animatedAttrs.text

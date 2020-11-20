@@ -1,5 +1,5 @@
 import Player from "@kissmybutton/motorcortex-player";
-import { Clip, loadPlugin } from "@kissmybutton/motorcortex/";
+import { HTMLClip, loadPlugin } from "@kissmybutton/motorcortex/";
 import SubtitlesDefinition from "../src/";
 const Subtitles = loadPlugin(SubtitlesDefinition);
 
@@ -28,7 +28,7 @@ const containerParams = {
   height: "100%",
 };
 
-const clip = new Clip({
+const clip = new HTMLClip({
   css,
   html,
   host,
