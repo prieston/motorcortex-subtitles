@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-subtitles",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Subtitles plugin for MotorCortex",
   "main": "dist/motorcortex-subtitles.cjs.js",
   "module": "dist/motorcortex-subtitles.esm.js",
@@ -68,7 +68,7 @@
     }
   },
   "peerDependencies": {
-    "@kissmybutton/motorcortex": "6.2.2"
+    "@kissmybutton/motorcortex": "6.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -76,7 +76,7 @@
     "@babel/preset-env": "^7.9.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@kissmybutton/motorcortex": "^6.2.2",
+    "@kissmybutton/motorcortex": "^6.2.3",
     "@kissmybutton/motorcortex-player": "^1.5.11",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -111,6 +111,7 @@
     "npx": "^10.2.2",
     "prettier": "^2.0.2",
     "rimraf": "^3.0.2",
+    "@rollup/plugin-json": "^4.1.0",
     "rollup": "^2.3.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
