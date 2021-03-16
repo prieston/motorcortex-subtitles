@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-subtitles",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Subtitles plugin for MotorCortex",
   "main": "dist/motorcortex-subtitles.cjs.js",
   "module": "dist/motorcortex-subtitles.esm.js",
@@ -68,7 +68,7 @@
     }
   },
   "peerDependencies": {
-    "@kissmybutton/motorcortex": "6.2.3"
+    "@kissmybutton/motorcortex": "^6.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
