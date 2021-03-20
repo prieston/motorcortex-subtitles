@@ -67,7 +67,7 @@ module.exports = {
   devServer: {
     // watchContentBase: true, // initiate a page refresh if static content changes
     host: "0.0.0.0",
-    port: 8080,
+    port: 8090,
     historyApiFallback: false,
     hot: true,
     contentBase: "./demo",

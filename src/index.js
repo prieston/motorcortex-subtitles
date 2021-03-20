@@ -1,11 +1,11 @@
-import SRT from "./SRT";
+import ParseText from "./ParseText";
 
 export default {
   npm_name: "@kissmybutton/motorcortex-subtitles",
   incidents: [
     {
-      exportable: SRT,
-      name: "SRT",
+      exportable: ParseText,
+      name: "ParseText",
     },
   ],
 };

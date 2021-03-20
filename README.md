@@ -1,132 +1,93 @@
-# MotorCortex Anime
+# MotorCortex Subtitles
 
-[Anime.js](https://animejs.com/) library as a MotorCortex Incident
+[Subtitle](https://www.npmjs.com/package/subtitle) library as a MotorCortex Incident
 
 ## Installation
 ```bash
-$ npm install @kissmybutton/motorcortex-anime
+$ npm install @kissmybutton/motorcortex-subtitles
 # OR
-$ yarn add @kissmybutton/motorcortex-anime
+$ yarn add @kissmybutton/motorcortex-subtitles
 ```
 
 ```javascript
-import Anime from "@kissmybutton/motorcortex-anime";
+import Subtitle from "@kissmybutton/motorcortex-subtitles";
 ```
 
 
 ## Key Concepts / Features
-MotorCortex Anime takes the capabilities of Anime.js library and exposes them via an easy to use MotorCortex Incident. 
-The library exposes just one Incident with the name "Anime" which, by the use of the Anime.js engine, can perform any CSS (or any other attribute) animation to any selected element.
+MotorCortex Subtitles takes the capabilities of Subtitle library of parsing subtilte files. 
+The library exposes just one Incident with the name "ParseText" which can parse supported subtitle files and add them to your donkey clip.
 
-## Browser compatibility 
-| Chrome | Safari | IE / Edge | Firefox | Opera |
-| --- | --- | --- | --- | --- |
-| 24+ | 6+ | 10+ | 32+ | 15+ |
+## Subtitle Formats supported
+SRT or WebVTT
 
 ## Documentation
 ### Import and load the plugin to MotorCortex
 ```javascript
 import MotorCortex from "@kissmybutton/motorcortex";
-import AnimePluginDefinition from "@kissmybutton/motorcortex-anime";
+import SubtitleDefinition from "@kissmybutton/motorcortex-subtitles";
 
-const AnimePlugin = MotorCortex.loadPlugin(AnimePluginDefinition);
+const Subtitle = MotorCortex.loadPlugin(SubtitleDefinition);
 ```
 
-### Create an Anim animation Incident and place it anywhere in your Clip
+### Create an subtitle Incident and place it anywhere in your Clip
 ```javascript
-import MotorCortex from "@kissmybutton/motorcortex";
-import AnimePluginDefinition from "@kissmybutton/motorcortex-anime";
+import { Clip, loadPlugin } from "@kissmybutton/motorcortex/";
+import SubtitlesDef from "../src/";
+import mySubsTextFile from "./subs.srt";
 
-const AnimePlugin = MotorCortex.loadPlugin(AnimePluginDefinition);
+const Subtitles = loadPlugin(SubtitlesDef);
 
-const MyClip = new MotorCortex.Clip({
+const clip = new Clip({
   html: `
-    <div class="container">
-      <div class="a"></div>
-    </div>
-  `,
+<div class="container">
+  <div id="subs-container"></div>
+</div>`,
   css: `
-    .container{
-      width: 600px;
-      height: 400px;
-      background: white;
-      position: relative;
-    }
-    .a{
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      background: red;
-      top: 0px;
-      left: 0px;
-    }
-  `
-});
-
-const MyAnime = new AnimePlugin.Anime({
-  animatedAttrs: {
-    left: '120px',
-    top: '220px',
-    background: 'orange',
-    width: '10px;
+  .container{
+    width:100%;
+    height:100%;
+    position:relative;
+    background:black;
   }
-}, {
-  selector: '.a',
-  duration: 2000,
-  easing: 'linear'
+  #subs-container{
+    text-align:center;
+    position:absolute;
+    bottom:80px;
+    left:50%;
+    transform:translateX(-50%);
+  }
+`,
+
+  host: document.getElementById("clip"),
+  containerParams: {
+    width: "100%",
+    height: "100%",
+  },
 });
 
-MyClip.addIncident(MyAnime, 1000);
+const subtitle = new Subtitles.ParseText(
+  {
+    attrs: {
+      css: `color:white;font-size:20px`,
+    },
+    animatedAttrs: {
+      text: mySubsTextFile,
+    },
+  },
+  { duration: 75000, selector: "#subs-container" }
+);
 
-MyClip.play();
+clip.addIncident(subtitle, 0);
+clip.play();
 ```
 
-### Work with tranform
-`transform` is (the only) composite attribute that Anime Incident can animate. Transform attribute includes the following attributes:
-- "translateX",
-- "translateY",
-- "translateZ",
-- "rotate",
-- "rotateX",
-- "rotateY",
-- "rotateZ",
-- "scale",
-- "scaleX",
-- "scaleY",
-- "scaleZ",
-- "skewX",
-- "skewY",
-- "perspective"
-
-All of the attributes on this list can only be animated via the transform composite attribute:
-```javascript
-const MyAnime = new AnimePlugin.Anime({
-  animatedAttrs: {
-    transform: {
-      translateX: '50px',
-      scale: 2
-    }
-  }
-}, {
-  selector: '.a',
-  duration: 2000,
-  easing: 'linear'
-});
-```
-
-## Reference
-### Supported animated attributes
-The Incident can accept (more or less) the exact same animated attributes that anime.js supports. The only difference is the 
-CSS transforms (translate, scale, etc) that MotorCortex plugin accepts them only as part of the composite "transform" attribute for conflicts check and prevention reasons. 
-### Exposed Incidents
-The only exposed Incident by the plugin is the `Anime` Incident. Anime Incident accepts only the animatedAttrs on its properties and nothing else.
 ### Demo
-https://kissmybutton.github.io/motorcortex-anime/demo/
+https://kissmybutton.github.io/motorcortex-subtitles/demo/
 
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT)
-
 
   
   
