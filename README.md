@@ -24,25 +24,16 @@ SRT or WebVTT
 ## Documentation
 ### Import and load the plugin to MotorCortex
 ```javascript
-import MotorCortex from "@kissmybutton/motorcortex";
-import SubtitleDefinition from "@kissmybutton/motorcortex-subtitles";
+import { HTMLClip, loadPlugin } from "@kissmybutton/motorcortex/";
+import mySubsTextFile from "./subs.srt.js";
+import SubtitlesDefinition from "@kissmybutton/motorcortex-subtitles/";
+const Subtitles = loadPlugin(SubtitlesDefinition);
 
-const Subtitle = MotorCortex.loadPlugin(SubtitleDefinition);
-```
-
-### Create an subtitle Incident and place it anywhere in your Clip
-```javascript
-import { Clip, loadPlugin } from "@kissmybutton/motorcortex/";
-import SubtitlesDef from "../src/";
-import mySubsTextFile from "./subs.srt";
-
-const Subtitles = loadPlugin(SubtitlesDef);
-
-const clip = new Clip({
+const clip = new HTMLClip({
   html: `
-<div class="container">
-  <div id="subs-container"></div>
-</div>`,
+    <div class="container">
+      <div id="subs-container"></div>
+    </div>`,
   css: `
   .container{
     width:100%;
@@ -58,7 +49,6 @@ const clip = new Clip({
     transform:translateX(-50%);
   }
 `,
-
   host: document.getElementById("clip"),
   containerParams: {
     width: "100%",
@@ -75,7 +65,7 @@ const subtitle = new Subtitles.ParseText(
       text: mySubsTextFile,
     },
   },
-  { duration: 75000, selector: "#subs-container" }
+  { duration: 23000, selector: "#subs-container" }
 );
 
 clip.addIncident(subtitle, 0);

@@ -1,7 +1,7 @@
 import MC from "@kissmybutton/motorcortex";
 import { parseSync } from "subtitle";
 
-export default class ParseText extends MC.API.MonoIncident {
+export default class ParseText extends MC.Effect {
   onGetContext() {
     this.element.style = this.attrs.attrs.css;
     try {
