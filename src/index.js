@@ -1,5 +1,4 @@
 import ParseText from "./ParseText";
-
 import { name, version } from "../package.json";
 
 export default {
@@ -9,6 +8,22 @@ export default {
     {
       exportable: ParseText,
       name: "ParseText",
+      attributesValidationRules: {
+        animatedAttrs: {
+          type: "object",
+          props: {
+            text: {
+              type: "string",
+            },
+          },
+        },
+        attrs: {
+          type: "object",
+          props: {
+            css: "string",
+          },
+        },
+      },
     },
   ],
 };

@@ -26,8 +26,8 @@ const clip = new HTMLClip({
 `,
   host: document.getElementById("clip"),
   containerParams: {
-    width: "100%",
-    height: "100%",
+    width: "720px",
+    height: "640px",
   },
 });
 
@@ -48,6 +48,6 @@ new Player({
   scaleToFit: true,
   clip: clip,
   theme: "mc-blue",
-  preview: false,
+  preview: true,
   pointerEvents: false,
 });

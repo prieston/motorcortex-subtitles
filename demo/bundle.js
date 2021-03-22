@@ -11,7 +11,7 @@
   };
   var n,
     r = !0,
-    i = "42d3f9b84f42dfae5eb1",
+    i = "93ad3b4656c9f834395b",
     a = {},
     o = [],
     s = [];
@@ -57916,7 +57916,19 @@
       S = {
         npm_name: E.a,
         version: E.b,
-        incidents: [{ exportable: M, name: "ParseText" }],
+        incidents: [
+          {
+            exportable: M,
+            name: "ParseText",
+            attributesValidationRules: {
+              animatedAttrs: {
+                type: "object",
+                props: { text: { type: "string" } },
+              },
+              attrs: { type: "object", props: { css: "string" } },
+            },
+          },
+        ],
       },
       k = Object(a.loadPlugin)(S),
       _ = new a.HTMLClip({
@@ -57925,7 +57937,7 @@
         css:
           "\n  .container{\n    width:100%;\n    height:100%;\n    position:relative;\n    background:black;\n  }\n  #subs-container{\n    text-align:center;\n    position:absolute;\n    bottom:80px;\n    left:50%;\n    transform:translateX(-50%);\n  }\n",
         host: document.getElementById("clip"),
-        containerParams: { width: "100%", height: "100%" },
+        containerParams: { width: "720px", height: "640px" },
       }),
       O = new k.ParseText(
         {
@@ -57939,7 +57951,7 @@
         scaleToFit: !0,
         clip: _,
         theme: "mc-blue",
-        preview: !1,
+        preview: !0,
         pointerEvents: !1,
       });
   },
