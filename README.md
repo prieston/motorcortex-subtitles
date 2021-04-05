@@ -36,7 +36,7 @@ const clip = new HTMLClip({
     width:100%;
     height:100%;
     position:relative;
-    background:#d5d5d5;
+    background:#151515;
   }
 `,
   host: document.getElementById("clip"),
