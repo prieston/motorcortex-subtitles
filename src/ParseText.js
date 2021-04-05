@@ -53,12 +53,12 @@ export default class ParseText extends MC.HTMLClip {
   }
 
   get css() {
-    let position = "center";
+    let position = "flex-end";
 
     if (this.attrs.position == "top") {
       position = "flex-start";
-    } else if (this.attrs.position == "bottom") {
-      position = "flex-end";
+    } else if (this.attrs.position == "center") {
+      position = "center";
     }
 
     return `

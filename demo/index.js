@@ -14,7 +14,7 @@ const clip = new HTMLClip({
     width:100%;
     height:100%;
     position:relative;
-    background:black;
+    background:#151515;
   }
 `,
   host: document.getElementById("clip"),

@@ -11,7 +11,7 @@
   };
   var n,
     i = !0,
-    r = "6d6b3339a12df520a8ea",
+    r = "b27d9b2df615094d61d0",
     o = {},
     s = [],
     a = [];
@@ -1368,10 +1368,10 @@
       function H(e) {
         return !isNaN(parseFloat(e)) && isFinite(e);
       }
-      function U(e) {
+      function W(e) {
         return "string" == typeof e || e instanceof String;
       }
-      function W(e) {
+      function U(e) {
         return "object" === s(e);
       }
       function q(e) {
@@ -1384,7 +1384,7 @@
       function K(e) {
         if (null === e && void 0 === e)
           return { result: !0, analysis: { width: null, height: null } };
-        if (!W(e))
+        if (!U(e))
           return {
             result: !1,
             errors: [
@@ -1401,12 +1401,12 @@
               'originalDims should be an object containing both the "width" and "height" keys',
             ],
           };
-        if (!U(e.width))
+        if (!W(e.width))
           return {
             result: !1,
             errors: ["originalDims.width should be defined either on px or %."],
           };
-        if (!U(e.height))
+        if (!W(e.height))
           return {
             result: !1,
             errors: [
@@ -1434,8 +1434,8 @@
       function Y(e) {
         var t = null,
           n = null;
-        if (W(e) && null != e) {
-          if (Object.prototype.hasOwnProperty.call(e, "width") && U(e.width)) {
+        if (U(e) && null != e) {
+          if (Object.prototype.hasOwnProperty.call(e, "width") && W(e.width)) {
             var i = e.width.match(J)[0],
               r = e.width.substring(i.length);
             !z(Number(i)) ||
@@ -1444,7 +1444,7 @@
           }
           if (
             Object.prototype.hasOwnProperty.call(e, "height") &&
-            U(e.height)
+            W(e.height)
           ) {
             var o = e.height.match(J)[0],
               s = e.height.substring(o.length);
@@ -2793,7 +2793,7 @@
                       (this.pureInitialValues = JSON.parse(JSON.stringify(e))),
                     this.hasUserDefinedInitialValue())
                   )
-                    if (W(this.targetValue)) {
+                    if (U(this.targetValue)) {
                       for (var n in this.userDefinedInitialValues[
                         this.attributeKey
                       ])
@@ -3314,7 +3314,7 @@
                     l.constructionIngredients.attrs.animatedAttrs[l.attribute];
                   Array.isArray(c)
                     ? (l.originalAnimatedAttributeValue = E(c))
-                    : W(c)
+                    : U(c)
                     ? (l.originalAnimatedAttributeValue = p({}, c))
                     : (l.originalAnimatedAttributeValue = c);
                 }
@@ -4112,7 +4112,7 @@
           var r;
           return t;
         },
-        Ue = {
+        We = {
           required: "The '{field}' field is required.",
           string: "The '{field}' field must be a string.",
           stringEmpty: "The '{field}' field must not be empty.",
@@ -4200,7 +4200,7 @@
             "The '{field}' field must be an instance of the '{expected}' class.",
           objectID: "The '{field}' field must be an valid ObjectID",
         },
-        We = function () {
+        Ue = function () {
           const e = [];
           return e.push("\n\t\treturn value;\n\t"), { source: e.join("\n") };
         },
@@ -5144,8 +5144,8 @@
         $t = "IFUNDEF",
         zt = "IEXPR",
         Ht = "IEXPREVAL",
-        Ut = "IMEMBER",
-        Wt = "IENDSTATEMENT",
+        Wt = "IMEMBER",
+        Ut = "IENDSTATEMENT",
         qt = "IARRAY";
       function Gt(e, t) {
         (this.type = e), (this.value = null != t ? t : 0);
@@ -5234,8 +5234,8 @@
             );
           else if (d === zt) c.push(Qt(p, t));
           else if (d === Ht) c.push(p);
-          else if (d === Ut) (i = c.pop()), c.push(i[p.value]);
-          else if (d === Wt) c.pop();
+          else if (d === Wt) (i = c.pop()), c.push(i[p.value]);
+          else if (d === Ut) c.pop();
           else {
             if (d !== qt) throw new Error("invalid Expression");
             for (l = p.value, a = []; l-- > 0; ) a.unshift(c.pop());
@@ -5341,12 +5341,12 @@
                       " })"
                   )
                 : l.push("(" + n + "(" + s.join(", ") + ") = " + i + ")");
-          } else if (h === Ut) (n = l.pop()), l.push(n + "." + u.value);
+          } else if (h === Wt) (n = l.pop()), l.push(n + "." + u.value);
           else if (h === qt) {
             for (a = u.value, s = []; a-- > 0; ) s.unshift(l.pop());
             l.push("[" + s.join(", ") + "]");
           } else if (h === zt) l.push("(" + tn(u.value, t) + ")");
-          else if (h !== Wt) throw new Error("invalid Expression");
+          else if (h !== Ut) throw new Error("invalid Expression");
         }
         return (
           l.length > 1 && (l = t ? [l.join(",")] : [l.join(";")]), String(l[0])
@@ -5376,7 +5376,7 @@
                 ? (rn(t, r) || t.push(r), (r = s.value))
                 : (r = s.value)
               : t.push(s.value)
-            : s.type === Ut && i && null !== r
+            : s.type === Wt && i && null !== r
             ? (r += "." + s.value)
             : s.type === zt
             ? on(s.value, t, n)
@@ -5400,7 +5400,7 @@
           case Rt:
           case Vt:
           case Nt:
-          case Wt:
+          case Ut:
             return this.value;
           case Ft:
             return "CALL " + this.value;
@@ -5408,7 +5408,7 @@
             return "DEF " + this.value;
           case qt:
             return "ARRAY " + this.value;
-          case Ut:
+          case Wt:
             return "." + this.value;
           default:
             return "Invalid Instruction";
@@ -5464,7 +5464,7 @@
                   else if (f === zt) {
                     for (; u.length > 0; ) h.push(u.shift());
                     h.push(new Gt(zt, e(d.value, n, i, r, o)));
-                  } else if (f === Ut && u.length > 0)
+                  } else if (f === Wt && u.length > 0)
                     (s = u.pop()), u.push(new Gt(Dt, s.value[d.value]));
                   else {
                     for (; u.length > 0; ) h.push(u.shift());
@@ -6013,7 +6013,7 @@
             (!this.nextToken ||
               this.nextToken.type === an ||
               (this.nextToken.type === hn && ")" === this.nextToken.value) ||
-              t.push(new Gt(Wt)),
+              t.push(new Gt(Ut)),
             this.nextToken.type !== an && this.parseExpression(t),
             e.push(new Gt(zt, t)),
             !0)
@@ -6031,7 +6031,7 @@
               n = [],
               i = e.length - 1;
             if (t.type !== Ft) {
-              if (t.type !== Vt && t.type !== Ut)
+              if (t.type !== Vt && t.type !== Wt)
                 throw new Error("expected variable for assignment");
               this.parseVariableAssignmentExpression(n),
                 e.push(new Gt(Nt, t.value)),
@@ -6156,10 +6156,10 @@
       function Hn(e) {
         return Math.log((1 + e) / (1 - e)) / 2;
       }
-      function Un(e) {
+      function Wn(e) {
         return Math.log(e) * Math.LOG10E;
       }
-      function Wn(e) {
+      function Un(e) {
         return -e;
       }
       function qn(e) {
@@ -6246,7 +6246,7 @@
                 throw new Error(
                   'unexpected ".", member access is not permitted'
                 );
-              this.expect(fn), e.push(new Gt(Ut, this.current.value));
+              this.expect(fn), e.push(new Gt(Wt, this.current.value));
             } else {
               if ("[" !== t.value)
                 throw new Error("unexpected symbol: " + t.value);
@@ -6433,8 +6433,8 @@
             log: Math.log,
             log2: Math.log2 || mi,
             ln: Math.log,
-            lg: Math.log10 || Un,
-            log10: Math.log10 || Un,
+            lg: Math.log10 || Wn,
+            log10: Math.log10 || Wn,
             expm1: Math.expm1 || di,
             log1p: Math.log1p || fi,
             abs: Math.abs,
@@ -6442,7 +6442,7 @@
             floor: Math.floor,
             round: Math.round,
             trunc: Math.trunc || Gn,
-            "-": Wn,
+            "-": Un,
             "+": Number,
             exp: Math.exp,
             not: qn,
@@ -6744,9 +6744,9 @@
             if (
               ((this.opts = {}),
               (this.defaults = {}),
-              (this.messages = Object.assign({}, Ue)),
+              (this.messages = Object.assign({}, We)),
               (this.rules = {
-                any: We,
+                any: Ue,
                 array: qe,
                 boolean: Ge,
                 class: Je,
@@ -8104,20 +8104,20 @@
           selector: p(p({}, Ai), {}, { optional: !0, strict: !0 }),
           name: Mi,
         }),
-        Ui = Si.compile({
+        Wi = Si.compile({
           selector: p(p({}, Ai), {}, { strict: !0, optional: !0 }),
           name: Mi,
           repeats: { type: "amount", integer: !0, min: 1, optional: !0 },
           hiatus: { type: "amount", integer: !0, min: 0, optional: !0 },
           delay: { type: "amount", integer: !0, min: 0, optional: !0 },
         });
-      function Wi(e) {
+      function Ui(e) {
         var t = new e.Class(e.attrs, e.props);
         if (!1 === t.result) return t;
         if (Object.prototype.hasOwnProperty.call(e, "incidents"))
           for (var n in e.incidents) {
             var i = e.incidents[n],
-              r = Wi(i.leaf);
+              r = Ui(i.leaf);
             if (!1 === r.result) return r;
             var o = t.addIncident(r, i.position);
             if (!1 === o.result) return o;
@@ -8137,7 +8137,7 @@
             n = this.exportLiveDefinition();
           for (var i in e) Fe(i, e[i], !0, "attrs", n);
           for (var r in t) Fe(r, t[r], !0, "props", n);
-          return Wi(n);
+          return Ui(n);
         };
       }
       Si.compile({ selector: Ai, duration: Li });
@@ -8328,7 +8328,7 @@
                   a = s[0],
                   l = s[1];
                 if (!(l instanceof Element))
-                  if (W(l))
+                  if (U(l))
                     e(
                       l,
                       ""
@@ -8336,7 +8336,7 @@
                         .concat("" === i ? "" : ".")
                         .concat(a)
                     );
-                  else if (U(l)) {
+                  else if (W(l)) {
                     var c = l.trim();
                     if (c.startsWith(F.staggerPreface)) {
                       var u = ki(c, !1),
@@ -12010,7 +12010,7 @@
                 arguments.length > 0 && void 0 !== arguments[0]
                   ? arguments[0]
                   : {};
-            if ((a(this, n), (e = t.call(this)), !W(i)))
+            if ((a(this, n), (e = t.call(this)), !U(i)))
               return (
                 re.error(
                   "ContextHandler expects an object on its constructor. ".concat(
@@ -12133,7 +12133,7 @@
                 arguments.length > 0 && void 0 !== arguments[0]
                   ? arguments[0]
                   : {};
-            if ((a(this, n), (e = t.call(this)), !W(i)))
+            if ((a(this, n), (e = t.call(this)), !U(i)))
               return (
                 re.error(
                   "ContextHandler expects an object on its constructor. ".concat(
@@ -12363,7 +12363,7 @@
                   : {};
             a(this, n), (e = t.call(this));
             var r = p({}, i);
-            if (!W(r))
+            if (!U(r))
               return (
                 re.error(
                   "HTMLFragmentContextHandler expects an object on its constructor. ".concat(
@@ -13213,7 +13213,7 @@
                 (r.attributesStaggers = []),
                 (r.propsStaggers = []),
                 r.setupDynamicValues());
-            var o = re.validateProps(r.props, Ui, r.constructor);
+            var o = re.validateProps(r.props, Wi, r.constructor);
             if (!o.result) return g(r, o);
             var s = Nr(r.attrs);
             if (s.length > 0)
@@ -13381,7 +13381,7 @@
       u(Fr, "isCombo", !0),
         u(Fr, "ClassName", "Combo"),
         u(Fr, "attrsValidationRules", null),
-        u(Fr, "propsValidationRules", Ui);
+        u(Fr, "propsValidationRules", Wi);
       var $r = I(
           null,
           function (e, t) {
@@ -13748,7 +13748,7 @@
             e
           );
         })(),
-        Ur = (function () {
+        Wr = (function () {
           function e() {
             a(this, e), (this.memory = []);
           }
@@ -13769,7 +13769,7 @@
             e
           );
         })(),
-        Wr = (function (e) {
+        Ur = (function (e) {
           d(n, e);
           var t = v(n);
           function n(e) {
@@ -14147,12 +14147,12 @@
         return t;
       }
       window.fs = {};
-      var Gr = { createDOMElement: zr, easings: Ae, clipFromDefinition: Wi },
+      var Gr = { createDOMElement: zr, easings: Ae, clipFromDefinition: Ui },
         Jr = qr(wr),
         Kr = Jr.Clip,
         Yr = Jr.AudioEffect,
         Xr = Jr.AudioPlayback,
-        Qr = Wr,
+        Qr = Ur,
         Zr = {
           version: ze,
           Effect: Te,
@@ -14167,7 +14167,7 @@
           AudioPlayback: Xr,
           AudioEffect: Yr,
           MediaPlayback: br,
-          TimeCapsule: Ur,
+          TimeCapsule: Wr,
         };
       (e.AudioClip = Qr),
         (e.AudioEffect = Yr),
@@ -14179,7 +14179,7 @@
         (e.Group = or),
         (e.HTMLClip = Vr),
         (e.MediaPlayback = br),
-        (e.TimeCapsule = Ur),
+        (e.TimeCapsule = Wr),
         (e.default = Zr),
         (e.loadPlugin = qr),
         (e.utils = Gr),
@@ -17170,7 +17170,7 @@
   },
   function (e) {
     e.exports = JSON.parse(
-      '{"a":"@kissmybutton/motorcortex-subtitles","b":"2.0.5"}'
+      '{"a":"@kissmybutton/motorcortex-subtitles","b":"3.0.0"}'
     );
   },
   function (e, t, n) {
@@ -19694,7 +19694,7 @@
             t ? e.exitFullscreen() : e.launchIntoFullscreen(e.clip.props.host);
         },
         H = z,
-        U = function () {
+        W = function () {
           var e = new Date().getTime();
           return "xxxxxxxx-xxxx".replace(/[xy]/g, function (t) {
             var n = (e + 16 * Math.random()) % 16 | 0;
@@ -19704,7 +19704,7 @@
             return i ? r.toUpperCase() : r;
           });
         },
-        W = a,
+        U = a,
         q = c,
         G = u,
         J = function (e) {
@@ -21475,7 +21475,7 @@
                     e.elements.donkeyclipButton.addEventListener(
                       "click",
                       function () {
-                        var t = U(),
+                        var t = W(),
                           n = window.open(
                             "https://donkeyclip.com?u=".concat(t)
                           ),
@@ -21507,10 +21507,10 @@
                     ) {
                       var t = function () {
                           e.options.preview &&
-                            (W(
+                            (U(
                               "".concat(e.name, "-hover-display")
                             ).classList.toggle("m-fadeIn"),
-                            W(
+                            U(
                               "".concat(e.name, "-hover-display")
                             ).classList.toggle("m-fadeOut"),
                             (e.elements.loopBar.onmousemove = i));
@@ -21553,13 +21553,13 @@
                               e.elements.loopBar.offsetWidth &&
                           !e.settings.resizeLoop
                         )
-                          W(
+                          U(
                             "".concat(e.name, "-hover-millisecond")
                           ).innerHTML = e.timeFormat(
                             e.settings.loopEndMillisecond
                           );
                         else if (n - i.left < 0 && !e.settings.resizeLoop)
-                          W(
+                          U(
                             "".concat(e.name, "-hover-millisecond")
                           ).innerHTML = e.timeFormat(
                             e.settings.loopStartMillisecond
@@ -21568,10 +21568,10 @@
                           var r = n - i.left + e.settings.loopLastPositionXPxls;
                           r < 0 && (r = 0);
                           var o =
-                              W("".concat(e.name, "-hover-display"))
+                              U("".concat(e.name, "-hover-display"))
                                 .offsetWidth / 2,
                             s =
-                              W("".concat(e.name, "-hover-display"))
+                              U("".concat(e.name, "-hover-display"))
                                 .offsetWidth / 2,
                             a = r - s;
                           r - o < 0
@@ -21586,10 +21586,10 @@
                             var c = l / e.clip.duration;
                             e.previewClip.onProgress(c, l);
                           }
-                          (W(
+                          (U(
                             "".concat(e.name, "-hover-millisecond")
                           ).innerHTML = e.timeFormat(l)),
-                            (W("".concat(e.name, "-hover-display")).style.left =
+                            (U("".concat(e.name, "-hover-display")).style.left =
                               a + "px");
                         }
                       };
@@ -23975,11 +23975,11 @@
             {
               key: "css",
               get: function () {
-                var e = "center";
+                var e = "flex-end";
                 return (
                   "top" == this.attrs.position
                     ? (e = "flex-start")
-                    : "bottom" == this.attrs.position && (e = "flex-end"),
+                    : "center" == this.attrs.position && (e = "center"),
                   "\n    .container {\n      display:flex;\n      justify-content:center;\n      align-items:"
                     .concat(e, ";\n      font-size:")
                     .concat(this.attrs.fontSize || 12, "px;\n      color:")
@@ -24050,9 +24050,17 @@
             exportable: S,
             name: "ParseText",
             attributesValidationRules: {
-              fontSize: "number",
-              textColor: "string",
-              fontFamily: "string",
+              fontSize: { type: "number", optional: !0 },
+              textColor: { type: "color", optional: !0 },
+              fontFamily: { type: "string", optional: !0 },
+              position: {
+                type: "enum",
+                optional: !0,
+                values: ["top", "center", "bottom"],
+              },
+              maxWidth: { type: "number", optional: !0 },
+              paddingTop: { type: "number", optional: !0 },
+              paddingBottom: { type: "number", optional: !0 },
               subtitles: "string",
             },
           },
@@ -24063,7 +24071,7 @@
         html:
           '\n    <div class="container">\n      <div id="subs-container"></div>\n    </div>',
         css:
-          "\n  .container{\n    width:100%;\n    height:100%;\n    position:relative;\n    background:black;\n  }\n",
+          "\n  .container{\n    width:100%;\n    height:100%;\n    position:relative;\n    background:#151515;\n  }\n",
         host: document.getElementById("clip"),
         containerParams: { width: "720px", height: "640px" },
       }),
