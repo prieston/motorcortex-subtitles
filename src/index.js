@@ -9,20 +9,10 @@ export default {
       exportable: ParseText,
       name: "ParseText",
       attributesValidationRules: {
-        animatedAttrs: {
-          type: "object",
-          props: {
-            text: {
-              type: "string",
-            },
-          },
-        },
-        attrs: {
-          type: "object",
-          props: {
-            css: "string",
-          },
-        },
+        fontSize: "number",
+        textColor: "string",
+        fontFamily: "string",
+        subtitles: "string",
       },
     },
   ],

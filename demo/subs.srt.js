@@ -9,7 +9,11 @@ These are some other captions
 
 3
 00:00:12,000 --> 00:00:15,000
-These are some other captions that are here
+These are some other captions that are here. A Long
+long long long long long long long long long long
+long long long long long long long long long long
+long long long long long long long long long long
+long long long long long long long long long text.
 
 4
 00:00:20,000 --> 00:00:23,000

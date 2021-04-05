@@ -16,13 +16,6 @@ const clip = new HTMLClip({
     position:relative;
     background:black;
   }
-  #subs-container{
-    text-align:center;
-    position:absolute;
-    bottom:80px;
-    left:50%;
-    transform:translateX(-50%);
-  }
 `,
   host: document.getElementById("clip"),
   containerParams: {
@@ -33,14 +26,21 @@ const clip = new HTMLClip({
 
 const subtitle = new Subtitles.ParseText(
   {
-    attrs: {
-      css: `color:white;font-size:20px`,
-    },
-    animatedAttrs: {
-      text: mySubsTextFile,
-    },
+    fontSize: 14,
+    textColor: "white",
+    fontFamily: "Ubuntu",
+    subtitles: mySubsTextFile,
+    position: "bottom",
+    maxWidth: 400,
+    paddingBottom: 50,
   },
-  { duration: 23000, selector: "#subs-container" }
+  {
+    selector: "#subs-container",
+    containerParams: {
+      width: "720px",
+      height: "640px",
+    },
+  }
 );
 
 clip.addIncident(subtitle, 0);
@@ -49,5 +49,5 @@ new Player({
   clip: clip,
   theme: "mc-blue",
   preview: true,
-  pointerEvents: false,
+  pointerEvents: true,
 });
