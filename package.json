@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-subtitles",
-  "version": "3.0.2",
+  "version": "1.0.0",
   "description": "Subtitles plugin for MotorCortex",
   "main": "dist/motorcortex-subtitles.cjs.js",
   "module": "dist/motorcortex-subtitles.esm.js",
