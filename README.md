@@ -4,13 +4,13 @@
 
 ## Installation
 ```bash
-$ npm install @kissmybutton/motorcortex-subtitles
+$ npm install @donkeyclip/motorcortex-subtitles
 # OR
-$ yarn add @kissmybutton/motorcortex-subtitles
+$ yarn add @donkeyclip/motorcortex-subtitles
 ```
 
 ```javascript
-import Subtitle from "@kissmybutton/motorcortex-subtitles";
+import Subtitle from "@donkeyclip/motorcortex-subtitles";
 ```
 
 
@@ -24,9 +24,9 @@ SRT or WebVTT
 ## Documentation
 ### Import and load the plugin to MotorCortex
 ```javascript
-import { HTMLClip, loadPlugin } from "@kissmybutton/motorcortex/";
+import { HTMLClip, loadPlugin } from "@donkeyclip/motorcortex/";
 import mySubsTextFile from "./subs.srt.js";
-import SubtitlesDefinition from "@kissmybutton/motorcortex-subtitles/";
+import SubtitlesDefinition from "@donkeyclip/motorcortex-subtitles/";
 const Subtitles = loadPlugin(SubtitlesDefinition);
 const clip = new HTMLClip({
   html: `
@@ -81,7 +81,7 @@ clip.play();
 | paddingBottom | The padding bottom value of the subtitles container in pixels | 0 | number |
 
 ### Demo
-https://kissmybutton.github.io/motorcortex-subtitles/demo/
+https://donkeyclip.github.io/motorcortex-subtitles/demo/
 
 
 ## License
