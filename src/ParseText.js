@@ -1,8 +1,8 @@
-import MC from "@kissmybutton/motorcortex";
+import { Effect, HTMLClip, loadPlugin } from "@donkeyclip/motorcortex";
 import { parseSync } from "subtitle";
 
 /*INNER PLUGIN*/
-class ParseTextIncident extends MC.Effect {
+class ParseTextIncident extends Effect {
   getScratchValue() {
     return "";
   }
@@ -40,10 +40,10 @@ const parseTextDefinition = {
   ],
 };
 
-const ParseTextPlugin = MC.loadPlugin(parseTextDefinition);
+const ParseTextPlugin = loadPlugin(parseTextDefinition);
 
 /*EXPORTED CLIP*/
-export default class ParseText extends MC.HTMLClip {
+export default class ParseText extends HTMLClip {
   get html() {
     return `
     <div class="container">

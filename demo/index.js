@@ -1,7 +1,7 @@
-import Player from "@kissmybutton/motorcortex-player";
-import { HTMLClip, loadPlugin } from "@kissmybutton/motorcortex/";
+import { HTMLClip, loadPlugin } from "@donkeyclip/motorcortex";
+import Player from "@donkeyclip/motorcortex-player";
+import SubtitlesDefinition from "../dist/motorcortex-subtitles.esm";
 import mySubsTextFile from "./subs.srt.js";
-import SubtitlesDefinition from "../src/";
 const Subtitles = loadPlugin(SubtitlesDefinition);
 
 const clip = new HTMLClip({

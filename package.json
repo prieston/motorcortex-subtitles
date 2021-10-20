@@ -1,5 +1,5 @@
 {
-  "name": "@kissmybutton/motorcortex-subtitles",
+  "name": "@donkeyclip/motorcortex-subtitles",
   "version": "3.0.4",
   "description": "Subtitles plugin for MotorCortex",
   "main": "dist/motorcortex-subtitles.cjs.js",
@@ -8,11 +8,11 @@
   "author": "KissMyButton PC (kissmybutton.gr) <opensource@kissmybutton.gr>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kissmybutton/motorcortex-subtitles.git"
+    "url": "https://github.com/donkeyclip/motorcortex-subtitles.git"
   },
   "license": "MIT",
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "scripts": {
     "lint": "eslint -c .eslintrc src/**/*.js",
@@ -58,9 +58,6 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "peerDependencies": {
-    "@kissmybutton/motorcortex": ">= 6.4.1 < 8"
-  },
   "devDependencies": {
     "@babel/cli": "7.14.8",
     "@babel/core": "7.15.0",
@@ -68,8 +65,8 @@
     "@babel/preset-env": "7.15.0",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
-    "@kissmybutton/motorcortex": "7.2.4",
-    "@kissmybutton/motorcortex-player": "2.1.1",
+    "@donkeyclip/motorcortex": "^7.5.4",
+    "@donkeyclip/motorcortex-player": "^2.3.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "4.1.0",
@@ -83,6 +80,7 @@
     "caniuse-lite": "1.0.30001270",
     "commitizen": "4.2.4",
     "concurrently": "^6.2.1",
+    "core-js": "^3.18.3",
     "css-loader": "5.2.7",
     "cz-conventional-changelog": "3.3.0",
     "es6-promise": "4.2.8",
