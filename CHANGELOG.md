@@ -1,5 +1,18 @@
 # Changelog
 
+### [3.0.4](https://www.github.com/donkeyclip/motorcortex-subtitles/compare/v3.0.3...v3.0.4) (2021-10-21)
+
+
+### Bug Fixes
+
+* cleanup broken demo ([8f5a268](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/8f5a2682ede5d6f6ab282f4a042d131e470fce50))
+* drop code from demo config ([d6bdd72](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/d6bdd721ab050c9a87f7b945448b70d172dfab94))
+* fix broken config ([ea1755b](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/ea1755bc22092f2aa7ce9d8f233ec99aa6eaa789))
+* fix broken webpack config ([ad52ee8](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/ad52ee85b6ab185f81f15fa7e0f284ee0616d39c))
+* update build and demo files drop old babel config ([c7714ac](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/c7714acedafb056d94ca537c4dabdd7e068c49a1))
+* update build and demo files drop old babel config ([1c51b8a](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/1c51b8a35af5a8e4ab3ad92762d83574fcf87395))
+* update rollup deps to latest packages ([670bf18](https://www.github.com/donkeyclip/motorcortex-subtitles/commit/670bf189d38fc0c244e28fde9332ece8e2bc0859))
+
 ### 3.0.3 (2021-04-12)
 
 ### Features
