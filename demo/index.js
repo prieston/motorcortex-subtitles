@@ -1,7 +1,7 @@
-import Player from "@kissmybutton/motorcortex-player";
-import { HTMLClip, loadPlugin } from "@kissmybutton/motorcortex/";
-import mySubsTextFile from "./subs.srt.js";
-import SubtitlesDefinition from "../src/";
+import { HTMLClip, loadPlugin } from "@donkeyclip/motorcortex";
+import Player from "@donkeyclip/motorcortex-player";
+import SubtitlesDefinition from "../dist/motorcortex-subtitles.esm";
+import { subs } from "./subs.srt.js";
 const Subtitles = loadPlugin(SubtitlesDefinition);
 
 const clip = new HTMLClip({
@@ -29,7 +29,7 @@ const subtitle = new Subtitles.ParseText(
     fontSize: 14,
     textColor: "white",
     fontFamily: "Ubuntu",
-    subtitles: mySubsTextFile,
+    subtitles: subs,
     position: "bottom",
     maxWidth: 400,
     paddingBottom: 50,
