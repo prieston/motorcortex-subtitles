@@ -1,5 +1,5 @@
-import ParseText from "./ParseText";
 import { name, version } from "../package.json";
+import { ParseText } from "./ParseText";
 
 export default {
   npm_name: name,

@@ -43,7 +43,7 @@ const parseTextDefinition = {
 const ParseTextPlugin = loadPlugin(parseTextDefinition);
 
 /*EXPORTED CLIP*/
-export default class ParseText extends HTMLClip {
+export class ParseText extends HTMLClip {
   get html() {
     return `
     <div class="container">

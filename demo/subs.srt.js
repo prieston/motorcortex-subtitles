@@ -1,4 +1,4 @@
-const subs = `
+export const subs = `
 1
 00:00:00,001 --> 00:00:05,000
 These are some captions
@@ -19,5 +19,3 @@ long long long long long long long long long text.
 00:00:20,000 --> 00:00:23,000
 This is the end of subtitles.. That was fun!? Right?
 `;
-
-export default subs;
