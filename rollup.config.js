@@ -29,8 +29,8 @@ export default [
       },
     ],
     plugins: [
-      resolve({ mainFields: ["module", "main", "browser"] }),
       json(),
+      resolve({ mainFields: ["module", "main", "browser"] }),
       commonjs(),
       babel(),
       terser(),
